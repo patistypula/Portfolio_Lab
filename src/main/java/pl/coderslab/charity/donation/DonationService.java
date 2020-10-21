@@ -7,4 +7,17 @@ import javax.transaction.Transactional;
 @Service
 @Transactional
 public class DonationService {
+    private final DonationRepository donationRepository;
+
+    public DonationService(DonationRepository donationRepository) {
+        this.donationRepository = donationRepository;
+    }
+
+    public Integer countDonationByQuantity(){
+        return donationRepository.countDonationByQuantity();
+    }
+
+    public Long countAllDonation(){
+        return donationRepository.countAllDonation();
+    }
 }
