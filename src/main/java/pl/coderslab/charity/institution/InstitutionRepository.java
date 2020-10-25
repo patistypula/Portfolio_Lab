@@ -11,5 +11,5 @@ import java.util.List;
 @Transactional
 public interface InstitutionRepository extends JpaRepository<Institution, Long> {
     @Query("select i from Institution i")
-    List<Institution> getAll();
+    List<Institution> getAllInstitution();
 }

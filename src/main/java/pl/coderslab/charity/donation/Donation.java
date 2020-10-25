@@ -2,6 +2,7 @@ package pl.coderslab.charity.donation;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
 import pl.coderslab.charity.category.Category;
 import pl.coderslab.charity.institution.Institution;
 
@@ -26,15 +27,16 @@ public class Donation {
     private String street;
     private String city;
     private String zipCode;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate pickUpDate;
     private LocalTime pickUpTime;
     private String pickUpComment;
 
     @ManyToMany
-    private List<Category> categoryList;
+    private List<Category> categories;
 
     public Donation() {
-        categoryList = new ArrayList<>();
+        categories = new ArrayList<>();
     }
 
     @ManyToOne

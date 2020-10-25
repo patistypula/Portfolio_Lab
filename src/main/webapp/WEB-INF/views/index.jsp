@@ -9,35 +9,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>Document</title>
-
     <link rel="stylesheet" href="<c:url value="resources/css/style.css"/>"/>
 </head>
 
 <body>
 <header class="header--main-page">
-    <nav class="container container--70">
-        <ul class="nav--actions">
-            <li><a href="" class="btn btn--small btn--without-border">Zaloguj</a></li>
-            <li><a href="#" class="btn btn--small btn--highlighted">Załóż konto</a></li>
-        </ul>
+    <%@include file="header.jsp"%>
+<%--    <nav class="container container--70">--%>
+<%--        <ul class="nav--actions">--%>
+<%--            <li><a href="" class="btn btn--small btn--without-border">Zaloguj</a></li>--%>
+<%--            <li><a href="#" class="btn btn--small btn--highlighted">Załóż konto</a></li>--%>
+<%--        </ul>--%>
 
-        <ul>
-            <li><a href="#" class="btn btn--without-border active">Start</a></li>
-            <li><a href="#" class="btn btn--without-border">O co chodzi?</a></li>
-            <li><a href="#" class="btn btn--without-border">O nas</a></li>
-            <li><a href="#" class="btn btn--without-border">Fundacje i organizacje</a></li>
-            <li><a href="#" class="btn btn--without-border">Kontakt</a></li>
-        </ul>
-    </nav>
+<%--        <ul>--%>
+<%--            <li><a href="#" class="btn btn--without-border active">Start</a></li>--%>
+<%--            <li><a href="#" class="btn btn--without-border">O co chodzi?</a></li>--%>
+<%--            <li><a href="#" class="btn btn--without-border">O nas</a></li>--%>
+<%--            <li><a href="#" class="btn btn--without-border">Fundacje i organizacje</a></li>--%>
+<%--            <li><a href="#" class="btn btn--without-border">Kontakt</a></li>--%>
+<%--        </ul>--%>
+<%--    </nav>--%>
 
-    <div class="slogan container container--90">
-        <div class="slogan--item">
-            <h1>
-                Zacznij pomagać!<br/>
-                Oddaj niechciane rzeczy w zaufane ręce
-            </h1>
-        </div>
-    </div>
+<%--    <div class="slogan container container--90">--%>
+<%--        <div class="slogan--item">--%>
+<%--            <h1>--%>
+<%--                Zacznij pomagać!<br/>--%>
+<%--                Oddaj niechciane rzeczy w zaufane ręce--%>
+<%--            </h1>--%>
+<%--        </div>--%>
+<%--    </div>--%>
 </header>
 
 <section class="stats">
@@ -103,13 +103,11 @@
 <section class="help">
     <h2>Komu pomagamy?</h2>
 
-    <!-- SLIDE 1 -->
     <div class="help--slides active" data-id="1">
         <p>W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy.
             Możesz sprawdzić czym się zajmują.</p>
 
         <ul class="help--slides-items">
-<%--            <li>--%>
             <c:forEach items="${institutions}" var="institution" varStatus="loopCounter">
                 <c:if test="${loopCounter.index%2==0}">
                     <li>
@@ -125,44 +123,30 @@
 
         </ul>
     </div>
-
-<%--            <li>--%>
-<%--                <div class="col">--%>
-<%--                    <div class="title">Fundacja “Dla dzieci"</div>--%>
-<%--                    <div class="subtitle">Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji życiowej.</div>--%>
-<%--                </div>--%>
-<%--                <div class="col">--%>
-<%--                    <div class="title">Fundacja “Bez domu”</div>--%>
-<%--                    <div class="subtitle">Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania</div>--%>
-<%--                </div>--%>
-
-<%--            </li>--%>
-
-
-
 </section>
 
 <footer>
-    <div class="contact">
-        <h2>Skontaktuj się z nami</h2>
-        <h3>Formularz kontaktowy</h3>
-        <form class="form--contact">
-            <div class="form-group form-group--50"><input type="text" name="name" placeholder="Imię"/></div>
-            <div class="form-group form-group--50"><input type="text" name="surname" placeholder="Nazwisko"/></div>
+    <%@include file="footer.jsp"%>
+<%--    <jsp:include page="footer.jsp"/>--%>
+<%--    <div class="contact">--%>
+<%--        <h2>Skontaktuj się z nami</h2>--%>
+<%--        <h3>Formularz kontaktowy</h3>--%>
+<%--        <form class="form--contact">--%>
+<%--            <div class="form-group form-group--50"><input type="text" name="name" placeholder="Imię"/></div>--%>
+<%--            <div class="form-group form-group--50"><input type="text" name="surname" placeholder="Nazwisko"/></div>--%>
 
-            <div class="form-group"><textarea name="message" placeholder="Wiadomość" rows="1"></textarea></div>
+<%--            <div class="form-group"><textarea name="message" placeholder="Wiadomość" rows="1"></textarea></div>--%>
 
-            <button class="btn" type="submit">Wyślij</button>
-        </form>
-    </div>
-    <div class="bottom-line">
-        <span class="bottom-line--copy">Copyright &copy; 2018</span>
-        <div class="bottom-line--icons">
-            <a href="#" class="btn btn--small"><img src="images/icon-facebook.svg"/></a> <a href="#"
-                                                                                            class="btn btn--small"><img
-                src="images/icon-instagram.svg"/></a>
-        </div>
-    </div>
+<%--            <button class="btn" type="submit">Wyślij</button>--%>
+<%--        </form>--%>
+<%--    </div>--%>
+<%--    <div class="bottom-line">--%>
+<%--        <span class="bottom-line--copy">Copyright &copy; 2018</span>--%>
+<%--        <div class="bottom-line--icons">--%>
+<%--            <a href="#" class="btn btn--small"><img src="images/icon-facebook.svg"/></a> --%>
+<%--            <a href="#" class="btn btn--small"><img src="images/icon-instagram.svg"/></a>--%>
+<%--        </div>--%>
+<%--    </div>--%>
 </footer>
 
 <script src="<c:url value="resources/js/app.js"/>"></script>
