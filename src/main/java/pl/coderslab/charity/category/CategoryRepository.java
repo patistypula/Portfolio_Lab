@@ -12,4 +12,6 @@ import java.util.List;
 public interface CategoryRepository extends JpaRepository<Category, Long> {
     @Query("select c from Category c")
     List<Category> getAllCategory();
+
+    boolean existsByName(String name);
 }

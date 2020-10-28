@@ -2,10 +2,7 @@ package pl.coderslab.charity.donation;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.context.request.WebRequest;
 import pl.coderslab.charity.category.Category;
@@ -17,6 +14,7 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
+@RequestMapping("/form")
 public class DonationController {
     private final DonationService donationService;
     private final CategoryService categoryService;
@@ -39,7 +37,7 @@ public class DonationController {
     }
 
 
-    @GetMapping("/form")
+    @GetMapping("")
     public String addDonation(Model model){
         DonationFormStep1 step1 = new DonationFormStep1();
         model.addAttribute("step1", step1);
