@@ -6,5 +6,5 @@ import org.springframework.stereotype.Service;
 public interface UserService {
 
     User findByEmail(String email);
-    void saveUser(User user);
+    void save(User user);   // like register
 }

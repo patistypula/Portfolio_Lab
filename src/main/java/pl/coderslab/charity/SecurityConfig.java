@@ -5,7 +5,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.annotation
+        .web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -19,19 +20,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public class WebAppConfig implements WebMvcConfigurer {
         @Override
         public void addViewControllers(ViewControllerRegistry registry) {
-//            registry.addViewController("/login").setViewName("security/login");
-//            registry.addViewController("/register").setViewName("security/register");
-              registry.addViewController("/403").setViewName("security/403");
+            registry.addViewController("/login").setViewName("login");
+            registry.addViewController("/register").setViewName("register");
+            registry.addViewController("/403").setViewName("403");
         }
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+
         http.authorizeRequests()
                 .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
-                .antMatchers("/").permitAll()
-                .anyRequest().authenticated()
-
                 .and()
                 .formLogin()
                 .loginPage("/login")
@@ -41,8 +40,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .logout()
                 .logoutSuccessUrl("/")
-                .permitAll()
-                .and().exceptionHandling().accessDeniedPage("/403");
+                .permitAll();
+//                .and().exceptionHandling().accessDeniedPage("/403");
     }
 
     @Bean
@@ -54,5 +53,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public SpringDataUserDetailsService customUserDetailsService() {
         return new SpringDataUserDetailsService();
     }
+
 
 }

@@ -10,7 +10,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
     <title>Document</title>
 
-    <link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>"/>
+    <link rel="stylesheet" href="<c:url value="/css/style.css"/>"/>
 </head>
 <body>
 <header class="header--main-page">
@@ -63,7 +63,7 @@
         </div>
     </div>
 
-    <a href="#" class="btn btn--large">Załóż konto</a>
+    <a href="/register" class="btn btn--large">Załóż konto</a>
 </section>
 
 <section class="about-us">
@@ -71,9 +71,9 @@
         <h2>O nas</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas vitae animi rem pariatur incidunt libero
             optio esse quisquam illo omnis.</p>
-        <img src="<c:url value="/resources/images/signature.svg"/>" class="about-us--text-signature" alt="Signature"/>
+        <img src="<c:url value="/images/signature.svg"/>" class="about-us--text-signature" alt="Signature"/>
     </div>
-    <div class="about-us--image"><img src="<c:url value="/resources/images/about-us.jpg"/>" alt="People in circle"/>
+    <div class="about-us--image"><img src="<c:url value="/images/about-us.jpg"/>" alt="People in circle"/>
     </div>
 </section>
 
@@ -105,7 +105,7 @@
     <%@include file="footer.jsp"%>
 </footer>
 
-<script src="<c:url value="/resources/js/app.js"/>"></script>
+<script src="/js/app.js"></script>
 </body>
 </html>
 
