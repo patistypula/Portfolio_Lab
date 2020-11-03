@@ -10,6 +10,7 @@ import pl.coderslab.charity.category.Category;
 import pl.coderslab.charity.category.CategoryService;
 import pl.coderslab.charity.institution.Institution;
 import pl.coderslab.charity.institution.InstitutionService;
+import pl.coderslab.charity.user.User;
 
 
 import javax.servlet.http.HttpSession;
