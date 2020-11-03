@@ -45,9 +45,9 @@
 <%--        </div>--%>
 <%--        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>--%>
 
-    <form method="post">
+    <form method="post" action="/login">
         <div class="form-group">
-           <input type="text" name="email" placeholder="Email"/>
+           <input type="email" name="username" placeholder="Email"/>
         </div>
         <div class="form-group">
            <input type="password" name="password" placeholder="Password"/>

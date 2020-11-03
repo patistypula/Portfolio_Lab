@@ -25,14 +25,14 @@
     <h2>Załóż konto</h2>
     <form:form method="post" action="/register" modelAttribute="user">
         <div class="form-group">
-            <form:input path="email" placeholder="Email" />
+            <form:input path="username" placeholder="Email" />
         </div>
         <div class="form-group">
             <form:input path="password" type="password" placeholder="Hasło" />
         </div>
-        <div class="form-group">
-            <form:input path="passwordConfirm" type="password" placeholder="Powtórz hasło" />
-        </div>
+<%--        <div class="form-group">--%>
+<%--            <form:input path="rePassword" type="password" placeholder="Powtórz hasło" />--%>
+<%--        </div>--%>
 
         <div class="form-group form-group--buttons">
             <a href="/login" class="btn btn--without-border">Zaloguj się</a>

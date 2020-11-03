@@ -12,4 +12,6 @@ import java.util.List;
 public interface InstitutionRepository extends JpaRepository<Institution, Long> {
     @Query("select i from Institution i")
     List<Institution> getAllInstitution();
+
+    Institution getById(long id);
 }

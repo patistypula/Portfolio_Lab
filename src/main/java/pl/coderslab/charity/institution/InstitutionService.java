@@ -17,4 +17,8 @@ public class InstitutionService {
     public List<Institution> getAllInstitution() {
         return institutionRepository.getAllInstitution();
     }
+
+    public Institution getById(long id){
+        return institutionRepository.getById(id);
+    }
 }

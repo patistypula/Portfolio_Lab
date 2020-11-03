@@ -25,7 +25,7 @@ public class User implements Serializable {
     @Email
     @NotEmpty(message = "Email can not be empty")
     @Column(nullable = false, unique = true)
-    private String email;
+    private String username;
     @NotEmpty(message = "Password can not be empty")
     private String password;
     private int enabled;
