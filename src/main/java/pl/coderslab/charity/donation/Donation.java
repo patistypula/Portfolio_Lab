@@ -27,10 +27,9 @@ public class Donation {
     private String street;
     private String city;
     private String zipCode;
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
-    private LocalDate pickUpDate;
     private LocalTime pickUpTime;
     private String pickUpComment;
+    private LocalDate pickUpDate;
 
     @ManyToMany
     private List<Category> categories;

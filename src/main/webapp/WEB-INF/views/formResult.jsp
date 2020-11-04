@@ -14,7 +14,7 @@
     <nav class="container container--70">
         <ul class="nav--actions">
             <li class="logged-user">
-                Witaj ${user.getUsername()}
+                Witaj Agata
                 <ul class="dropdown">
                     <li><a href="#">Profil</a></li>
                     <li><a href="#">Moje zbiórki</a></li>
@@ -133,6 +133,7 @@
 
             <div class="form-group form-group--buttons">
                 <form method="post">
+                    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                     <button type="submit" class="btn prev-step" name="previousStep4">Wstecz</button>
                     <button type="submit" class="btn" name="save">Potwierdzam</button>
                 </form>
@@ -144,7 +145,6 @@
 <footer>
     <%@include file="footer.jsp"%>
 </footer>
-<script src="/js/app.js"></script>
 
 </body>
 </html>

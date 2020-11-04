@@ -16,7 +16,7 @@
     <nav class="container container--70">
         <ul class="nav--actions">
             <li class="logged-user">
-                Witaj ${user.getUsername()}
+                Witaj ${currentUser}
                 <ul class="dropdown">
                     <li><a href="#">Profil</a></li>
                     <li><a href="#">Moje zbiórki</a></li>
@@ -108,6 +108,5 @@
     <%@include file="footer.jsp"%>
 </footer>
 
-<script src="/js/app.js"></script>
 </body>
 </html>

@@ -20,7 +20,6 @@ public class DonationFormStep4 {
     private String street;
     private String city;
     private String zipCode;
-    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate pickUpDate;
     private LocalTime pickUpTime;
     private String pickUpComment;

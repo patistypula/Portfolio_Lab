@@ -14,7 +14,7 @@
     <nav class="container container--70">
         <ul class="nav--actions">
             <li class="logged-user">
-                Witaj ${user.getUsername()}
+                Witaj Agata
                 <ul class="dropdown">
                     <li><a href="#">Profil</a></li>
                     <li><a href="#">Moje zbiórki</a></li>
@@ -75,7 +75,9 @@
                 Wybierz jedną, do
                 której trafi Twoja przesyłka.
             </p>
-            <p data-step="4" class="active">Podaj adres oraz termin odbioru rzeczy.</p>
+            <p data-step="4" class="active">
+                Podaj adres oraz termin odbioru rzeczy.
+            </p>
         </div>
     </div>
 
@@ -118,7 +120,7 @@
                         <h4>Termin odbioru</h4>
                         <div class="form-group form-group--inline">
                             <label> Data
-                                <form:input path="pickUpDate" placeholder="dd.mm.rrrr"/>
+                                <form:input path="pickUpDate" placeholder="yyyy-mm-dd"/>
                             </label>
                         </div>
 
@@ -148,7 +150,6 @@
     <%@include file="footer.jsp"%>
 </footer>
 
-<script src="/js/app.js"></script>
 </body>
 </html>
 

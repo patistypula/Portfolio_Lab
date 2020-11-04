@@ -1,6 +1,7 @@
 package pl.coderslab.charity.donation;
 
 import lombok.AllArgsConstructor;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -10,6 +11,7 @@ import pl.coderslab.charity.category.Category;
 import pl.coderslab.charity.category.CategoryService;
 import pl.coderslab.charity.institution.Institution;
 import pl.coderslab.charity.institution.InstitutionService;
+import pl.coderslab.charity.user.CurrentUser;
 import pl.coderslab.charity.user.User;
 
 
@@ -135,21 +137,27 @@ public class DonationController {
         donation.setPickUpTime(step4.getPickUpTime());
         donation.setPickUpComment(step4.getPickUpComment());
         donationService.saveNewDonation(donation);
-        return "index";
+        return "redirect:/form";
     }
 
     private void setCategory(){
         List<Category> categories = categoryService.getAllCategory();
-        List <Category> donatCateogry = new ArrayList<>();
+        List <Category> donatCategory = new ArrayList<>();
         if(step1.getCategories().size()>0) {
             for (Category category : categories) {
                 for (int i = 0; i < step1.getCategories().size(); i++) {
                     if (category.getId() == step1.getCategories().get(i).getId()) {
-                        donatCateogry.add(category);
+                        donatCategory.add(category);
                     }
                 }
             }
         }
-        step1.setCategories(donatCateogry);
+        step1.setCategories(donatCategory);
+    }
+
+    @ModelAttribute("currentUser")
+    public String name(@AuthenticationPrincipal CurrentUser currentUser){
+        User entityUser = currentUser.getUser();
+        return entityUser.getUsername();
     }
 }
