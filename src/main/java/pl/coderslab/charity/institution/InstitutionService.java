@@ -17,4 +17,20 @@ public class InstitutionService {
     public List<Institution> getAllInstitution() {
         return institutionRepository.getAllInstitution();
     }
+
+    public void addInstitution(Institution institution) {
+
+    }
+
+    public Institution findInstitutionById(Long id) {
+        return null;
+    }
+
+    public void updateInstitution(Institution institution) {
+
+    }
+
+    public void deleteInstitutionById(Long id) {
+
+    }
 }
