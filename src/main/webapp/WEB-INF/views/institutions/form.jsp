@@ -1,6 +1,13 @@
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
+<%--
+  Created by IntelliJ IDEA.
+  User: patis
+  Date: 04.11.2020
+  Time: 17:55
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -11,6 +18,7 @@
     <link rel="stylesheet" href="<c:url value="/css/style.css"/>"/>
 </head>
 <body>
+
 <header class="header--form-page">
     <nav class="container container--70">
         <ul class="nav--actions">
@@ -28,7 +36,7 @@
             <li><a href="/" class="btn btn--without-border active">Start</a></li>
             <li><a href="index.html#steps" class="btn btn--without-border">O co chodzi?</a></li>
             <li><a href="index.html#about-us" class="btn btn--without-border">O nas</a></li>
-            <li><a href="index.html#help" class="btn btn--without-border">Fundacje i organizacje</a></li>
+            <li><a href="/institution/all" class="btn btn--without-border">Fundacje i organizacje</a></li>
             <li><a href="index.html#contact" class="btn btn--without-border">Kontakt</a></li>
         </ul>
     </nav>
@@ -60,51 +68,40 @@
     </div>
 </header>
 
-<section class="form--steps">
-    <div class="form--steps-instructions">
-        <div class="form--steps-container">
-            <h3>Ważne!</h3>
-            <p data-step="1" class="active">
-                Uzupełnij szczegóły dotyczące Twoich rzeczy. Dzięki temu będziemy
-                wiedzieć komu najlepiej je przekazać.
-            </p>
-            <p data-step="2">
-                Uzupełnij szczegóły dotyczące Twoich rzeczy. Dzięki temu będziemy
-                wiedzieć komu najlepiej je przekazać.
-            </p>
-            <p data-step="3">
-                Wybierz jedną, do
-                której trafi Twoja przesyłka.
-            </p>
-            <p data-step="4">Podaj adres oraz termin odbioru rzeczy.</p>
-        </div>
-    </div>
-
-    <div class="form--steps-container">
-
-        <div class="form--steps-counter">Krok <span>1</span>/4</div>
-
-        <form:form modelAttribute="step1" method="post">
-            <div data-step="1" class="active">
-                <h3>Zaznacz co chcesz oddać:</h3>
-                <div style="font-family: 'Merriweather', serif; font-weight: 300; font-style: normal;
-                font-size: 2rem; margin-bottom: 5px;">
-                    <c:forEach items="${categories}" var="category">
-                        <label>
-                            <form:checkbox path="categories" label="${category.name}" value="${category}"/>
-                        </label><br>
-                    </c:forEach>
-                </div>
-                <div class="form-group form-group--buttons">
-                    <button type="submit" class="btn next-step" name="toStep2">Dalej</button>
-                </div>
-            </div>
-        </form:form>
-    </div>
-</section>
+<center><h2>Dodawanie nowej fundacji</h2></center> <br>
+<form:form method="post" modelAttribute="institutions">
+    <form:hidden path="id"/>
+    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+    <center>Nazwa: <form:input path="name"/></center>
+    <center>Opis: <form:input path="description"/></center>
+    <button class="btn">Zapisz</button>
+</form:form>
 
 <footer>
-    <%@include file="footer.jsp"%>
+    <div class="contact">
+        <h2>Skontaktuj się z nami</h2>
+        <h3>Formularz kontaktowy</h3>
+        <form class="form--contact">
+            <div class="form-group form-group--50">
+                <input type="text" name="name" placeholder="Imię"/>
+            </div>
+            <div class="form-group form-group--50">
+                <input type="text" name="surname" placeholder="Nazwisko"/>
+            </div>
+            <div class="form-group">
+            <textarea name="message" placeholder="Wiadomość" rows="1">
+            </textarea>
+            </div>
+            <button class="btn" type="submit">Wyślij</button>
+        </form>
+    </div>
+    <div class="bottom-line">
+        <span class="bottom-line--copy">Copyright &copy; 2018</span>
+        <div class="bottom-line--icons">
+            <a href="#" class="btn btn--small"><img src="/images/icon-facebook.svg"/></a>
+            <a href="#" class="btn btn--small"><img src="/images/icon-instagram.svg"/></a>
+        </div>
+    </div>
 </footer>
 
 </body>

@@ -21,4 +21,9 @@ public class InstitutionService {
     public Institution getById(long id){
         return institutionRepository.getById(id);
     }
+
+    public Institution save(Institution institution) {
+        return institutionRepository.save(institution);
+    }
+
 }

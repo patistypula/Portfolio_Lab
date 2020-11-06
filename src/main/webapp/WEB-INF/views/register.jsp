@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="<c:url value="/css/style.css"/>"/>
 </head>
 <body>
 <header>
@@ -30,13 +30,9 @@
         <div class="form-group">
             <form:input path="password" type="password" placeholder="Hasło" />
         </div>
-<%--        <div class="form-group">--%>
-<%--            <form:input path="rePassword" type="password" placeholder="Powtórz hasło" />--%>
-<%--        </div>--%>
-
         <div class="form-group form-group--buttons">
             <a href="/login" class="btn btn--without-border">Zaloguj się</a>
-            <button type="submit">Załóż konto</button>
+            <button type="submit" class="btn next-step">Załóż konto</button>
         </div>
     </form:form>
 </section>
