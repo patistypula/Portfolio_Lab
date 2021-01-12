@@ -1,12 +1,31 @@
-<img alt="Logo" src="http://coderslab.pl/svg/logo-coderslab.svg" width="400">
+GENERAL INFORMATION
 
+This project is a part of projects carried out independently at the end of the Java programming course at Coderslab in Warsaw. It is a charity application where you can add donations for people in need.
 
-Przed przystąpieniem do pracy  przeczytaj poniższe wskazówki.
-## Jak zacząć?
+TECHNOLOGIES
 
-1. Zaimportuj projekt jako projekt `Maven`, wg poniższych wskazówek:
+    Spring Boot
+    Spring Form
+    Hibernate
+    Spring Data JPA
 
-	* W `IntelliJ` wybieramy: `File –> New –> Project from Existing Sources...`
-	* Wskazujemy lokalizację katalogu ze sklonowanym projektem i zatwierdzamy.
-	* Następnie w nowym oknie wybieramy: `Import project from external model` i wskazujemy `Maven`
-	* Wybieramy kolejno opcje: `Next –> Next –> Next –> Finish`
+What was ready and implemented:
+
+    Graphics
+    Layout
+    CSS, JS
+
+FUNCTIONALITIES
+
+    register/login user
+    create 3 entities (category, institution, donations)
+    form for adding gifts
+    administrator can manage institutions/other administrators and users
+    edit user dates
+    send e-mail and activate user's account
+    support for forgotten passwords
+    password validation
+
+STATUS
+
+Project is in progesss.
