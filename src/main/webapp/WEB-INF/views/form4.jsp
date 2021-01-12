@@ -85,7 +85,7 @@
     <div class="form--steps-container">
 
         <div class="form--steps-counter">Krok <span>4</span>/4</div>
-        <form:form modelAttribute="step4" method="post">
+        <form:form modelAttribute="step" method="post">
             <div data-step="4" class="active">
                 <h3>Podaj adres oraz termin odbioru rzecz przez kuriera:</h3>
 
@@ -122,12 +122,13 @@
                         <div class="form-group form-group--inline">
                             <label> Data
                                 <form:input path="pickUpDate" placeholder="yyyy-mm-dd"/>
+<%--                                <input type="text" name="data" value="${step.pickUpDate}"/>--%>
                             </label>
                         </div>
 
                         <div class="form-group form-group--inline">
                             <label> Godzina
-                                <form:input path="pickUpTime" placeholder="--:--"/>
+                                <form:input type="time" path="pickUpTime" placeholder="--:--"/>
                             </label>
                         </div>
                         <div class="form-group form-group--inline">

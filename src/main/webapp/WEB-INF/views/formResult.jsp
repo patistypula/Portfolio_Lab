@@ -25,10 +25,10 @@
         </ul>
 
         <ul>
-            <li><a href="index.html" class="btn btn--without-border active">Start</a></li>
+            <li><a href="/" class="btn btn--without-border active">Start</a></li>
             <li><a href="index.html#steps" class="btn btn--without-border">O co chodzi?</a></li>
             <li><a href="index.html#about-us" class="btn btn--without-border">O nas</a></li>
-            <li><a href="index.html#help" class="btn btn--without-border">Fundacje i organizacje</a></li>
+            <li><a href="/admin/institution/all" class="btn btn--without-border">Fundacje i organizacje</a></li>
             <li><a href="index.html#contact" class="btn btn--without-border">Kontakt</a></li>
         </ul>
     </nav>
@@ -87,28 +87,31 @@
 
         <div data-step="5" class="active">
             <h3>Podsumowanie Twojej darowizny</h3>
+            <br>
+
 
             <div class="summary">
-                <div class="form-section">
-                    <h4>Oddajesz:</h4>
-                    <ul>
-                        <li>
-                            <span class="icon icon-bag"></span>
-                            <span class="summary--text"
-                            ${step2.quantity} worków 60 litrowych z
-                            <c:forEach items="${step1.categories}" var="category">
-                                  ${category.name},
-                            </c:forEach>
-                            </span>
-                        </li>
-
-                        <li>
-                            <span class="icon icon-hand"></span>
-                            <span style="font-size: 1.8rem; font-weight: 300; line-height: 30px; margin-bottom: 5px">
-                                Dla fundacji ${step3.institution.name}
+                <div class="form-section form-section--columns">
+                    <div class="form-section--column">
+                        <h3>Oddajesz:</h3>
+                            <ul>
+                            <li>
+                                <span class="icon icon-bag"></span>
+                                <span style="font-size: 1.8rem; font-weight: 300; line-height: 30px; margin-bottom: 5px">
+                                ${step2.quantity} worków 60-litrowych zawierających
+                                <c:forEach items="${step1.categories}" var="category">
+                                    ${category.name},
+                                </c:forEach>
                                 </span>
-                        </li>
-                    </ul>
+                            </li>
+                            <li>
+                                <span class="icon icon-hand"></span>
+                                <span style="font-size: 1.8rem; font-weight: 300; line-height: 30px; margin-bottom: 5px">
+                                    Dla: ${step3.institution.name}
+                                </span>
+                            </li>
+                            </ul>
+                    </div>
                 </div>
 
                 <div class="form-section form-section--columns">

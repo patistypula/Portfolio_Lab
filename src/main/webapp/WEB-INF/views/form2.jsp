@@ -96,6 +96,7 @@
                     <form:input path="quantity"/>
                 </label>
             </div>
+            <br>
             <div class="form-group form-group--buttons">
                 <button type="submit" class="btn" name="previousStep1">Wstecz</button>
                 <button type="submit" class="btn" name="toStep3">Dalej</button>

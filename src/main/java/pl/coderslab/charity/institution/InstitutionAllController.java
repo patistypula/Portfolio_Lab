@@ -29,5 +29,4 @@ public class InstitutionAllController {
         User entityUser = currentUser.getUser();
         return entityUser.getUsername();
     }
-
 }

@@ -35,6 +35,4 @@ public class InstitutionDeleteController {
         User entityUser = currentUser.getUser();
         return entityUser.getUsername();
     }
-
-
 }

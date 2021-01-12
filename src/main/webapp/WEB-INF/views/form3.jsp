@@ -96,6 +96,7 @@
                             Cel i misja:
                                 ${ins.description}
                         </label><br>
+                        <br>
                     </c:forEach>
                 </div>
                 <div class="form-group form-group--buttons">

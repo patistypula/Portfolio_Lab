@@ -102,20 +102,22 @@ public class DonationController {
         if(step3.getInstitution()!=null) {
             step3.setInstitution(institutionService.getById(step3.getInstitution().getId()));
         }
-        model.addAttribute("step4", step4);
+//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+//        LocalDate data = LocalDate.parse(, formatter);
+//        step4.setPickUpDate(data);
+        model.addAttribute("step", step4);
         return "form4";
     }
 
     @PostMapping(params = "previousStep4")
     public String addDonationPrevious4(Model model, HttpSession session){
-        model.addAttribute("step4", step4);
+        model.addAttribute("step", step4);
         return "form4";
     }
 
     @PostMapping(params = "toStep5")
-    public String addDonationNext(@ModelAttribute("step4") DonationFormStep4 step,
+    public String addDonationNext(@ModelAttribute("step") DonationFormStep4 step,
                                   Model model, HttpSession session){
-        step4 = step;
         model.addAttribute("step1", step1);
         model.addAttribute("step2", step2);
         model.addAttribute("step3", step3);

@@ -25,5 +25,4 @@ public class InstitutionService {
     public Institution save(Institution institution) {
         return institutionRepository.save(institution);
     }
-
 }
